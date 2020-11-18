@@ -16,22 +16,34 @@ glimpse(dat)
 ```
 
 1a. Create a scatterplot with the regression line for experience vs. wage.
+
 2.Save the linear model for wage ~ experience as mod1.
+
 3a. Save the summary of mod1 as mod1_sum. Print the summary.
+
 3b. Find the following for mod1: the coefficents of regression line, r, r^2, and std dev of regression line.
+
 3c. Write the regression line with the coefficients from the output in the form y^hat = a + bx.
 [Type answer here.]
+
 4a. Plot the residual plot.
+
 ####4b. What does the residual plot tell you about the linear model? ##### [Answer here.]
 
 5a. Construct a 95% confidence interval for the slope of the regression line.
+
 5b. Interpret the confidence interval.
 [Answer here.]
+
 6a. Perform an equivalent hypothesis test to the confidence interval on the slope of the regression line using the t-distribution.
+
 6b. Interpret the result in reference to the null and alternative hypotheses.
 [Answer here.]
+
 7a. Give the first ten confidence intervals for the mean. Hint: Use the following wrapper: head().
+
 7b. Give the first ten prediction intervals.
+
 7c. Which intervals are wider? The confidence intervals for the mean or the prediction intervals? Explain and justify your answer.
 [Answer here.]
 

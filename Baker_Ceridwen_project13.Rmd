@@ -1,19 +1,41 @@
----
-title: "R Notebook"
-output: html_notebook
----
-
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
-
+R Project: Chapter 13
+LAST, FIRST
+Math M15H, Fall 2020
 ```{r}
-plot(cars)
+library(tidyverse)
+```
+```{r}
+library(faraway)
+library(smatr)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+```{r}
+# Load and check out the data from the Faraway package.
+dat <- data.frame(uswages)
+glimpse(dat)
+```
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+1a. Create a scatterplot with the regression line for experience vs. wage.
+2.Save the linear model for wage ~ experience as mod1.
+3a. Save the summary of mod1 as mod1_sum. Print the summary.
+3b. Find the following for mod1: the coefficents of regression line, r, r^2, and std dev of regression line.
+3c. Write the regression line with the coefficients from the output in the form y^hat = a + bx.
+[Type answer here.]
+4a. Plot the residual plot.
+####4b. What does the residual plot tell you about the linear model? ##### [Answer here.]
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+5a. Construct a 95% confidence interval for the slope of the regression line.
+5b. Interpret the confidence interval.
+[Answer here.]
+6a. Perform an equivalent hypothesis test to the confidence interval on the slope of the regression line using the t-distribution.
+6b. Interpret the result in reference to the null and alternative hypotheses.
+[Answer here.]
+7a. Give the first ten confidence intervals for the mean. Hint: Use the following wrapper: head().
+7b. Give the first ten prediction intervals.
+7c. Which intervals are wider? The confidence intervals for the mean or the prediction intervals? Explain and justify your answer.
+[Answer here.]
+
+
+
+
 

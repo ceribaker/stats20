@@ -17,14 +17,31 @@ glimpse(dat)
 
 1a. Create a scatterplot with the regression line for experience vs. wage.
 ```{r}
-ggplot(data=dat, aes(x=exper, y=wage))+geom_point()+geom_smooth()
+ggplot(data=dat, aes(x=exper, y=wage))+geom_point()+geom_smooth(method = lm)
 ```
 
 2.Save the linear model for wage ~ experience as mod1.
+```{r}
+mod1 <- lm(wage ~ exper, data=dat)
+mod1
+```
 
 3a. Save the summary of mod1 as mod1_sum. Print the summary.
+```{r}
+mod1_sum <- sumary(mod1)
+mod1_sum
+```
 
 3b. Find the following for mod1: the coefficents of regression line, r, r^2, and std dev of regression line.
+```{r}
+# r
+sqrt(mod1_sum$r.squared)
+
+# r^2
+mod1_sum$r.squared
+
+
+```
 
 3c. Write the regression line with the coefficients from the output in the form y^hat = a + bx.
 [Type answer here.]

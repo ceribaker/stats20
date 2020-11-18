@@ -16,6 +16,9 @@ glimpse(dat)
 ```
 
 1a. Create a scatterplot with the regression line for experience vs. wage.
+```{r}
+ggplot(data=dat, aes(x=exper, y=wage))+geom_point()+geom_smooth()
+```
 
 2.Save the linear model for wage ~ experience as mod1.
 

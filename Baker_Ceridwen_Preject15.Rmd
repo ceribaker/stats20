@@ -1,0 +1,31 @@
+Project Chapter 15
+Math M15H
+Ceridwen Baker
+From Exercise 15.9 in the texbook, there is a paper about women’s and men’s eating behavior following exposure to ideal-body images and tests. The csv file has the data of men, who were given one of these four treatments
+1. Viewed slides of fit, muscular men.
+
+2. Viewed slides of fit, muscular men accompanied by diet and fitness-related text.
+
+3. Viewed slides of fit, muscular men accompanied by text not related to diet and fitness.
+
+4. Did not view any slides.
+
+The data itself refers to how many pretzels the man ate after his treatment.
+Contruct a multiple group boxplot. Then perform and interpret an ANOVA test, and if necessary, Tukey’s Multiple Comparisons Test.
+
+```{r}
+# Library & data
+library(tidyverse)
+```
+
+```{r}
+eat <- read.csv('eat.csv')
+```
+
+
+
+
+
+
+
+

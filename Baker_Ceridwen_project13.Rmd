@@ -28,7 +28,7 @@ mod1
 
 3a. Save the summary of mod1 as mod1_sum. Print the summary.
 ```{r}
-mod1_sum <- sumary(mod1)
+mod1_sum <- summary(mod1)
 mod1_sum
 ```
 
@@ -40,34 +40,60 @@ sqrt(mod1_sum$r.squared)
 # r^2
 mod1_sum$r.squared
 
-
+#std dev
+sd(mod1_sum$residuals)
 ```
 
 3c. Write the regression line with the coefficients from the output in the form y^hat = a + bx.
-[Type answer here.]
+y=6.2981 +492.1669x
 
 4a. Plot the residual plot.
+```{r}
+plot(mod1$residuals)
+abline(h=0)
 
-####4b. What does the residual plot tell you about the linear model? ##### [Answer here.]
+```
+
+####4b. What does the residual plot tell you about the linear model? ##### the linear model is a fairly good fit for the data. the outliers are concerning 
 
 5a. Construct a 95% confidence interval for the slope of the regression line.
+```{r}
+confint(mod1, level = 0.95)
+```
 
 5b. Interpret the confidence interval.
-[Answer here.]
+95% chance that there is a relationship between the 2 variables because the 95% confidence interval excludes 0.
 
 6a. Perform an equivalent hypothesis test to the confidence interval on the slope of the regression line using the t-distribution.
+```{r}
+slope.test(dat$wage, dat$exper, test.value = 0, method = 'OLS', alpha = 0.05)
+```
+```{r}
+t<- 6.298091/6.2981
+t
+```
+```{r}
+p <-  2*pt(-abs(t),df=8)
+p
+```
 
 6b. Interpret the result in reference to the null and alternative hypotheses.
-[Answer here.]
+p value is larger than .05 so we fail to reject the null. the slope can be due to chance. 
+Ho: beta = 0 OR rho = 0 OR independent OR uncorrelated
+Ha: beta not= 0 OR rho not= 0 OR dependent OR correlated
 
 7a. Give the first ten confidence intervals for the mean. Hint: Use the following wrapper: head().
+```{r}
+ head(predict(mod1, dat, interval = 'confidence'),10)
+
+```
 
 7b. Give the first ten prediction intervals.
+```{r}
+head(predict(mod1, dat, interval = 'predict'),10)
+
+```
 
 7c. Which intervals are wider? The confidence intervals for the mean or the prediction intervals? Explain and justify your answer.
-[Answer here.]
-
-
-
-
-
+Predict is far wider from -281.4503 to 1492.515, where as confidence is 585.6946 to 625.3704. 
+the predicted is wider because it includes values from the entirety of possible slopes. 

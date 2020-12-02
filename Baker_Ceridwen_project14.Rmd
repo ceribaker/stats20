@@ -1,0 +1,85 @@
+R Project: Chapter 14
+Baker, Ceridwen
+Math M15H, Fall 2020
+```{r}
+# Load the germane libraries
+library(tidyverse)
+```
+
+```{r}
+library(faraway)
+```
+
+```{r}
+# Load and check out the data from the Faraway package.
+dat <- data.frame(uswages)
+glimpse(dat)
+```
+```{r}
+view(dat)
+```
+
+1a. Create a scatterplot with the regression line for experience vs. wage.
+```{r}
+ggplot(data=dat, aes(x=exper, y=wage))+geom_point()+geom_smooth(method = lm)
+```
+
+1b. Create a scatterplot with the regression line for education vs. wage.
+```{r}
+ggplot(data=dat, aes(x=educ, y=wage))+geom_point()+geom_smooth(method = lm)
+
+```
+
+2a. Save the linear model for wage ~ experience as mod1.
+```{r}
+mod1 <- lm(wage ~ exper, data=dat)
+mod1
+```
+
+2b. Save the summary of mod1 as mod1_sum. Print the summary.
+```{r}
+mod1_sum <- summary(mod1)
+mod1_sum
+```
+
+3a. Save the linear model for wage ~ education as mod2.
+```{r}
+mod2 <- lm(wage ~ educ, data=dat)
+mod2
+```
+
+3b. Save the summary of mod2 as mod2_sum. Print the summary.
+```{r}
+mod2_sum <- summary(mod2)
+mod2_sum
+```
+
+4a. Now create a quadratic regression curve for experience and wage. Call this mod3. Print the summary.
+```{r}
+mod3 <- lm(wage ~ I(exper^2) + I(exper),dat)
+summary(mod3)
+```
+
+4b. Does having the quadratic term help give a better model? Explain and justify your answer.
+The quadratic has a better model because the goodness of fit is better in the quadratic than in the linear. the linear has a 0.033 and the quadratic has a 0.098.
+
+5a. Now create a model with education and wage as predictors and wage as the response variable. Call this mod4. Print its summary.
+```{r}
+mod4 <- lm(wage ~  educ + wage, dat)
+summary(mod4)
+```
+
+5b. Now create a model with education and experience as predictors and wage as the response variable. Also include an interaction variable of education and experience. Call this mod5. Print its summary.
+```{r}
+mod5 <- lm(wage ~  educ + exper, dat)
+summary(mod5)
+```
+
+6. Please rank mod1, mod2, mod3, mod4, and mod5 from best to worst. Explain and justify your answer in detail. 
+
+1.mod5
+2.mod3
+3.mod2
+4.mod1
+5.mod4
+mod 4 dosent make sence because having wage as a predictor and a response variable makes no sense so it is last. I ordered 1-3 ad 5 the way they are based on the r squared value. mod 5 has the largest at .1343 next is mod3 at 0.09822  then mod2 at 0.0612 and then mod1 at 0.03308. 
